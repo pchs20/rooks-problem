@@ -1,0 +1,10 @@
+# conda-env.yaml
+name: rook-problem  # Create a conda environment with this name.
+channels:
+    - conda-forge   # Download packages from this repository source.
+dependencies:
+    - python=3.12
+    - scip=8.1.0    # The Solver. This downloads a compiled binary
+                    # and adds makes it discoverable within the
+                    # virtual environment.
+    - pyomo=6.7.1   # The library to interact with any Solver.

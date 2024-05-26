@@ -1,0 +1,113 @@
+2 Set Declarations
+    columns : Set of columns of the chest board.
+        Size=1, Index=None, Ordered=Insertion
+        Key  : Dimen : Domain : Size : Members
+        None :     1 :    Any :    8 : {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}
+    rows : Set of rows of the chest board.
+        Size=1, Index=None, Ordered=Insertion
+        Key  : Dimen : Domain : Size : Members
+        None :     1 :    Any :    8 : {1, 2, 3, 4, 5, 6, 7, 8}
+
+1 Var Declarations
+    place_rook : Binary variable: 1 if rook is placed, 0 otherwise.
+        Size=64, Index=columns*rows
+        Key      : Lower : Value : Upper : Fixed : Stale : Domain
+        ('a', 1) :     0 :  None :     1 : False :  True : Binary
+        ('a', 2) :     0 :  None :     1 : False :  True : Binary
+        ('a', 3) :     0 :  None :     1 : False :  True : Binary
+        ('a', 4) :     0 :  None :     1 : False :  True : Binary
+        ('a', 5) :     0 :  None :     1 : False :  True : Binary
+        ('a', 6) :     0 :  None :     1 : False :  True : Binary
+        ('a', 7) :     0 :  None :     1 : False :  True : Binary
+        ('a', 8) :     0 :  None :     1 : False :  True : Binary
+        ('b', 1) :     0 :  None :     1 : False :  True : Binary
+        ('b', 2) :     0 :  None :     1 : False :  True : Binary
+        ('b', 3) :     0 :  None :     1 : False :  True : Binary
+        ('b', 4) :     0 :  None :     1 : False :  True : Binary
+        ('b', 5) :     0 :  None :     1 : False :  True : Binary
+        ('b', 6) :     0 :  None :     1 : False :  True : Binary
+        ('b', 7) :     0 :  None :     1 : False :  True : Binary
+        ('b', 8) :     0 :  None :     1 : False :  True : Binary
+        ('c', 1) :     0 :  None :     1 : False :  True : Binary
+        ('c', 2) :     0 :  None :     1 : False :  True : Binary
+        ('c', 3) :     0 :  None :     1 : False :  True : Binary
+        ('c', 4) :     0 :  None :     1 : False :  True : Binary
+        ('c', 5) :     0 :  None :     1 : False :  True : Binary
+        ('c', 6) :     0 :  None :     1 : False :  True : Binary
+        ('c', 7) :     0 :  None :     1 : False :  True : Binary
+        ('c', 8) :     0 :  None :     1 : False :  True : Binary
+        ('d', 1) :     0 :  None :     1 : False :  True : Binary
+        ('d', 2) :     0 :  None :     1 : False :  True : Binary
+        ('d', 3) :     0 :  None :     1 : False :  True : Binary
+        ('d', 4) :     0 :  None :     1 : False :  True : Binary
+        ('d', 5) :     0 :  None :     1 : False :  True : Binary
+        ('d', 6) :     0 :  None :     1 : False :  True : Binary
+        ('d', 7) :     0 :  None :     1 : False :  True : Binary
+        ('d', 8) :     0 :  None :     1 : False :  True : Binary
+        ('e', 1) :     0 :  None :     1 : False :  True : Binary
+        ('e', 2) :     0 :  None :     1 : False :  True : Binary
+        ('e', 3) :     0 :  None :     1 : False :  True : Binary
+        ('e', 4) :     0 :  None :     1 : False :  True : Binary
+        ('e', 5) :     0 :  None :     1 : False :  True : Binary
+        ('e', 6) :     0 :  None :     1 : False :  True : Binary
+        ('e', 7) :     0 :  None :     1 : False :  True : Binary
+        ('e', 8) :     0 :  None :     1 : False :  True : Binary
+        ('f', 1) :     0 :  None :     1 : False :  True : Binary
+        ('f', 2) :     0 :  None :     1 : False :  True : Binary
+        ('f', 3) :     0 :  None :     1 : False :  True : Binary
+        ('f', 4) :     0 :  None :     1 : False :  True : Binary
+        ('f', 5) :     0 :  None :     1 : False :  True : Binary
+        ('f', 6) :     0 :  None :     1 : False :  True : Binary
+        ('f', 7) :     0 :  None :     1 : False :  True : Binary
+        ('f', 8) :     0 :  None :     1 : False :  True : Binary
+        ('g', 1) :     0 :  None :     1 : False :  True : Binary
+        ('g', 2) :     0 :  None :     1 : False :  True : Binary
+        ('g', 3) :     0 :  None :     1 : False :  True : Binary
+        ('g', 4) :     0 :  None :     1 : False :  True : Binary
+        ('g', 5) :     0 :  None :     1 : False :  True : Binary
+        ('g', 6) :     0 :  None :     1 : False :  True : Binary
+        ('g', 7) :     0 :  None :     1 : False :  True : Binary
+        ('g', 8) :     0 :  None :     1 : False :  True : Binary
+        ('h', 1) :     0 :  None :     1 : False :  True : Binary
+        ('h', 2) :     0 :  None :     1 : False :  True : Binary
+        ('h', 3) :     0 :  None :     1 : False :  True : Binary
+        ('h', 4) :     0 :  None :     1 : False :  True : Binary
+        ('h', 5) :     0 :  None :     1 : False :  True : Binary
+        ('h', 6) :     0 :  None :     1 : False :  True : Binary
+        ('h', 7) :     0 :  None :     1 : False :  True : Binary
+        ('h', 8) :     0 :  None :     1 : False :  True : Binary
+
+1 Objective Declarations
+    objective_function : Size=1, Index=None, Active=True
+        Key  : Active : Sense    : Expression
+        None :   True : maximize : place_rook[a,1] + place_rook[a,2] + place_rook[a,3] + place_rook[a,4] + place_rook[a,5] + place_rook[a,6] + place_rook[a,7] + place_rook[a,8] + place_rook[b,1] + place_rook[b,2] + place_rook[b,3] + place_rook[b,4] + place_rook[b,5] + place_rook[b,6] + place_rook[b,7] + place_rook[b,8] + place_rook[c,1] + place_rook[c,2] + place_rook[c,3] + place_rook[c,4] + place_rook[c,5] + place_rook[c,6] + place_rook[c,7] + place_rook[c,8] + place_rook[d,1] + place_rook[d,2] + place_rook[d,3] + place_rook[d,4] + place_rook[d,5] + place_rook[d,6] + place_rook[d,7] + place_rook[d,8] + place_rook[e,1] + place_rook[e,2] + place_rook[e,3] + place_rook[e,4] + place_rook[e,5] + place_rook[e,6] + place_rook[e,7] + place_rook[e,8] + place_rook[f,1] + place_rook[f,2] + place_rook[f,3] + place_rook[f,4] + place_rook[f,5] + place_rook[f,6] + place_rook[f,7] + place_rook[f,8] + place_rook[g,1] + place_rook[g,2] + place_rook[g,3] + place_rook[g,4] + place_rook[g,5] + place_rook[g,6] + place_rook[g,7] + place_rook[g,8] + place_rook[h,1] + place_rook[h,2] + place_rook[h,3] + place_rook[h,4] + place_rook[h,5] + place_rook[h,6] + place_rook[h,7] + place_rook[h,8]
+
+3 Constraint Declarations
+    constraint_at_most_one_rook_per_column : Limit the number of rooks per column to at most one.
+        Size=8, Index=columns, Active=True
+        Key : Lower : Body                                                                                                                                          : Upper : Active
+          a :  -Inf : place_rook[a,1] + place_rook[a,2] + place_rook[a,3] + place_rook[a,4] + place_rook[a,5] + place_rook[a,6] + place_rook[a,7] + place_rook[a,8] :   1.0 :   True
+          b :  -Inf : place_rook[b,1] + place_rook[b,2] + place_rook[b,3] + place_rook[b,4] + place_rook[b,5] + place_rook[b,6] + place_rook[b,7] + place_rook[b,8] :   1.0 :   True
+          c :  -Inf : place_rook[c,1] + place_rook[c,2] + place_rook[c,3] + place_rook[c,4] + place_rook[c,5] + place_rook[c,6] + place_rook[c,7] + place_rook[c,8] :   1.0 :   True
+          d :  -Inf : place_rook[d,1] + place_rook[d,2] + place_rook[d,3] + place_rook[d,4] + place_rook[d,5] + place_rook[d,6] + place_rook[d,7] + place_rook[d,8] :   1.0 :   True
+          e :  -Inf : place_rook[e,1] + place_rook[e,2] + place_rook[e,3] + place_rook[e,4] + place_rook[e,5] + place_rook[e,6] + place_rook[e,7] + place_rook[e,8] :   1.0 :   True
+          f :  -Inf : place_rook[f,1] + place_rook[f,2] + place_rook[f,3] + place_rook[f,4] + place_rook[f,5] + place_rook[f,6] + place_rook[f,7] + place_rook[f,8] :   1.0 :   True
+          g :  -Inf : place_rook[g,1] + place_rook[g,2] + place_rook[g,3] + place_rook[g,4] + place_rook[g,5] + place_rook[g,6] + place_rook[g,7] + place_rook[g,8] :   1.0 :   True
+          h :  -Inf : place_rook[h,1] + place_rook[h,2] + place_rook[h,3] + place_rook[h,4] + place_rook[h,5] + place_rook[h,6] + place_rook[h,7] + place_rook[h,8] :   1.0 :   True
+    constraint_at_most_one_rook_per_row : Limit the number of rooks per row to at most one.
+        Size=8, Index=rows, Active=True
+        Key : Lower : Body                                                                                                                                          : Upper : Active
+          1 :  -Inf : place_rook[a,1] + place_rook[b,1] + place_rook[c,1] + place_rook[d,1] + place_rook[e,1] + place_rook[f,1] + place_rook[g,1] + place_rook[h,1] :   1.0 :   True
+          2 :  -Inf : place_rook[a,2] + place_rook[b,2] + place_rook[c,2] + place_rook[d,2] + place_rook[e,2] + place_rook[f,2] + place_rook[g,2] + place_rook[h,2] :   1.0 :   True
+          3 :  -Inf : place_rook[a,3] + place_rook[b,3] + place_rook[c,3] + place_rook[d,3] + place_rook[e,3] + place_rook[f,3] + place_rook[g,3] + place_rook[h,3] :   1.0 :   True
+          4 :  -Inf : place_rook[a,4] + place_rook[b,4] + place_rook[c,4] + place_rook[d,4] + place_rook[e,4] + place_rook[f,4] + place_rook[g,4] + place_rook[h,4] :   1.0 :   True
+          5 :  -Inf : place_rook[a,5] + place_rook[b,5] + place_rook[c,5] + place_rook[d,5] + place_rook[e,5] + place_rook[f,5] + place_rook[g,5] + place_rook[h,5] :   1.0 :   True
+          6 :  -Inf : place_rook[a,6] + place_rook[b,6] + place_rook[c,6] + place_rook[d,6] + place_rook[e,6] + place_rook[f,6] + place_rook[g,6] + place_rook[h,6] :   1.0 :   True
+          7 :  -Inf : place_rook[a,7] + place_rook[b,7] + place_rook[c,7] + place_rook[d,7] + place_rook[e,7] + place_rook[f,7] + place_rook[g,7] + place_rook[h,7] :   1.0 :   True
+          8 :  -Inf : place_rook[a,8] + place_rook[b,8] + place_rook[c,8] + place_rook[d,8] + place_rook[e,8] + place_rook[f,8] + place_rook[g,8] + place_rook[h,8] :   1.0 :   True
+    constraint_no_rook_on_a1 : No rook in position a1.
+        Size=1, Index=None, Active=True
+        Key  : Lower : Body            : Upper : Active
+        None :   0.0 : place_rook[a,1] :   0.0 :   True
+
+7 Declarations: columns rows place_rook constraint_at_most_one_rook_per_column constraint_at_most_one_rook_per_row constraint_no_rook_on_a1 objective_function
