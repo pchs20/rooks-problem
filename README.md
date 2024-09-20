@@ -8,6 +8,8 @@ This project solves this problem using a 8 x 8 chessboard. To do so, a solver ca
 SCIP, one of the most powerful non-commercial solvers, is used. The Pyomo library is
 also used to interact with such model.
 
+Find [here](modeling.pdf) the model expressed mathematically.
+
 ## Installation
 
 - Base enviornment: You should have installed Python and pip.
